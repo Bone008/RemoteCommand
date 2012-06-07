@@ -1,0 +1,29 @@
+name: RemoteCommand
+main: bone008.bukkit.remotecommand.RemoteCommand
+version: 1.0.0
+author: Bone008
+description: Allows you to execute a command as a different player or the console.
+
+commands:
+    remotecmd:
+        usage: /<command> <who> <command|message>
+        aliases: [as]
+
+
+permissions:
+    remotecommand.*:
+        default: false
+        description: Gives access to all permissions of this plugin.
+        children:
+            remotecommand.use: true
+            remotecommand.console: true
+            remotecommand.protected: true
+    remotecommand.use:
+        default: op
+        description: Allows the usage of the remote command.
+    remotecommand.console:
+        default: op
+        description: Allows executing commands as the console.
+    remotecommand.protected:
+        default: op
+        description: Blocks others without this node to execute commands as you.
